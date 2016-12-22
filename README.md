@@ -38,4 +38,4 @@ However, the snippets are written to work either the full lib is already integra
 
 This repository is meant to be reviewed and updated by each member of OVK.
 
-If you have questions please submit an [issue](https://github.com/Unitadtechnologystandards/HTML5Lib/issues) or send a mail to ![info@bvdw.org](mailto:info@bvdw.org) subject **HTML5Lib**
+If you have questions please submit an [issue](https://github.com/Unitadtechnologystandards/HTML5Lib/issues) or send a mail to [info@bvdw.org](mailto:info@bvdw.org) subject **HTML5Lib**
