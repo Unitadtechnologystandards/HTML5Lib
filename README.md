@@ -18,7 +18,6 @@ Some features do not need communication with the mainpage while working, these a
 ```
 * clicktag
 * localConnect
-
 ```
 
 ### postMessage Use Cases
@@ -26,10 +25,8 @@ Some features do not need communication with the mainpage while working, these a
 These action will need to have a postMessage support:
 
 ```
-
 * Expand/Collapse
 * Hide/Show/Close
-
 ```
 
 ### full library
