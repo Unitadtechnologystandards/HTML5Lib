@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+## HTML5Lib - a collection of scripts to use within HTML5 AdCreation and AdServing  
 
-You can use the [editor on GitHub](https://github.com/Unitadtechnologystandards/HTML5Lib/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+The main challenge by serving HTML5 Ads is [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+The former used object tag to serve the flash plugin has been part of the main page, therefore actionScript could easily access all informations
+form the mainpage and invoke functions if they have been there.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+HTML5 are HTML documents, the same like each other website on the world, included within an iFrame pointing to a foreign domain.
+CORS concludes to never let a frame access another frame of a different origin.
+That means that a script within an HTML5 AD is not allowed to resize it's own iFrame or manipulate any other element on the main page by his owm like flash could via actionScript
 
-### Markdown
+To make this work HTML5 itself offers a communicator called ["postMessage"](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+This allows us to send information to any frame even if do may not access it directly.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### without postMessage Use Cases
 
-```markdown
-Syntax highlighted code block
+Some features do not need communication with the mainpage while working, these are
 
-# Header 1
-## Header 2
-### Header 3
+```
+* clicktag
+* localConnect
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### postMessage Use Cases
 
-### Jekyll Themes
+These action will need to have a postMessage support:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Unitadtechnologystandards/HTML5Lib/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```
+
+* Expand/Collapse
+* Hide/Show/Close
+
+```
+
+### full library
+
+The repository also offers the former library state April 2015.
+However, the snippets are written to work either the full lib is already integrated or not
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+This repository is meant to be reviewed and updated by each member of OVK.
+
+If you have questions please submit an [issue](https://github.com/Unitadtechnologystandards/HTML5Lib/issues) or send a mail to ![info@bvdw.org](mailto:info@bvdw.org) subject **HTML5Lib**
