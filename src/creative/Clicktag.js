@@ -1,4 +1,3 @@
-<script>
 /* init method to get URI params, where 'clicktag', 'target' and 'frameId' will be passed */
 var getUriParams = function() {
 	var query_string = {}
@@ -27,4 +26,3 @@ document.getElementById('clicktag2').setAttribute('href', getUriParams.clicktag2
 function openLandingPage() {
 	window.open(getUriParams.clicktag2, getUriParams.target2);
 }
-</script>
