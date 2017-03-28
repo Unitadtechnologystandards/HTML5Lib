@@ -29,4 +29,3 @@ hideAd = function() {
 showAd = function() {
     window.top.postMessage('showAd:;:' + getUriParams.frameId ,'*');
 }
-</script>

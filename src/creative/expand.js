@@ -20,4 +20,3 @@ expandAd = function() {
 collapseAd = function() {
     window.top.postMessage('contractAd:;:' + getUriParams.frameId + ':;:' + expandedWidth + ':;:'  + expandedHeight + ':;:' + expandedDirection + ':;:'  + clipValue,'*');
 }
-</script>
