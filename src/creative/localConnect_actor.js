@@ -10,7 +10,7 @@ ovk.lc = {
 	findOthers: function(target) {
 		/* check if there are frames in this document */
 		var scanWindowFrames = target.frames || '';
-		if (scanWindowFrames.length == 0) return;
+		if (scanWindowFrames.length === 0) return;
 		for (i=0; i < scanWindowFrames.length; i++) {
 			/* then let's try to access them */
 			try {
@@ -35,7 +35,7 @@ ovk.lc = {
 			/* no, so let's repeat this in 200 ms */
 			this.tries++;
 			setTimeout('ovk.lc.findOthers(window.top)', 200);
-		} else if (this.maxRepeat == this.tries) {
+		} else if (this.maxRepeat === this.tries) {
 			/* no, but now it's enough we don't expect the companions to be loaded anymore, let's call failed() to inform the ad */
 			this.failed && this.failed();
 		} else {
@@ -46,7 +46,7 @@ ovk.lc = {
 	init: function() {
 		this.findOthers(window.top);
 	}
-}
+};
 
 /* these can be or has to be changed for each index.html */
 /* optional callback function, will be fired when defined */
@@ -54,14 +54,14 @@ ovk.lc.failed = function() {
 	console.log("tried to find all " + this.creativeCount + " compagnions " + this.tries + " times but failed, aborting...");
 	/* space for custom functions on failure */
 	return false;
-}
+};
 
 /* optional callback function, will be fired when defined */
 ovk.lc.done = function() {
 	console.log("all compagnions found and loaded, put your script or reference here.");
 	/* space for custom functions on success like ad.init() */
 	return false;
-}
+};
 
 /* !!Mandatory!! set ID to something you can recognise later on to find the ad when you need it */
 ovk.companionId = ovk.lc.setIdent + "_layer";

@@ -8,7 +8,7 @@ var getUriParams = function() {
 	for(var i = 0; i < parmsArray.length; i++) {
 		var pair = parmsArray[i].split('=');
 		var val = decodeURIComponent(pair[1]);
-		if (val != '' && pair[0] != '') query_string[pair[0]] = val;
+		if (val !== '' && pair[0] !== '') query_string[pair[0]] = val;
 	}
 	return query_string;
 }();
@@ -16,7 +16,7 @@ var getUriParams = function() {
 /* please change 'expandAd' and 'contractAd' to whatever your methods get called by the creative or let the ad call this functions 'as they are' */
 expandAd = function() {
     window.top.postMessage('expandAd:;:' + getUriParams.frameId + ':;:' + expandedWidth + ':;:'  + expandedHeight,'*');
-}
+};
 collapseAd = function() {
     window.top.postMessage('contractAd:;:' + getUriParams.frameId + ':;:' + expandedWidth + ':;:'  + expandedHeight + ':;:' + expandedDirection + ':;:'  + clipValue,'*');
-}
+};
