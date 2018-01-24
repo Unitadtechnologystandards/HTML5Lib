@@ -22,7 +22,9 @@ function openLandingPage() {
 
 /* to use more than one click tag you have to go on like this: */
 document.getElementById('clicktag2').setAttribute('href', getUriParams.clicktag2).setAttribute('target', getUriParams.target2);
-/* or */
-function openLandingPage() {
-	window.open(getUriParams.clicktag2, getUriParams.target2);
+/* or you also can do something like this e.g. */
+function openLandingPageByParams(uri, target) {
+    uri = uri || getUriParams.clicktag;
+    target = target || getUriParams.target;
+	window.open(uri, target);
 }
