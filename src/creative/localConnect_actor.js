@@ -28,7 +28,9 @@ ovk.lc = {
 					/* if not, check if there are any other frames inside */
 					this.findOthers(aktFrame);
 				}
-			} catch(e) {}
+			} catch(e) {
+                this.findOthers(aktFrame);
+			}
 		}
 		/* let's see if we're finished and found every companion */
 		if (this.companionsLength < this.creativeCount-1 && this.tries < this.maxRepeat) {
