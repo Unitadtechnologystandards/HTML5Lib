@@ -15,7 +15,7 @@ ovk.expandAd = function(a) {
 
     // clip example
     var call = msg.data.split(':;:');
-    document.getElementById(call[1]).style.clip = 'rect(0px " + call[2] + "px " + call[2] + "px 0px)';
+    document.getElementById(call[1]).style.clip = "rect(0px " + call[2] + "px " + call[2] + "px 0px)";
 };
 
 ovk.collapseAd = function(a, w, h, ori, cut) {
