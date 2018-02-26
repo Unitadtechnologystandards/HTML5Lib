@@ -53,14 +53,14 @@ ovk.lc = {
 /* these can be or has to be changed for each index.html */
 /* optional callback function, will be fired when defined */
 ovk.lc.failed = function() {
-	console.log("tried to find all " + this.creativeCount + " compagnions " + this.tries + " times but failed, aborting...");
+    window.console && console.log("tried to find all " + this.creativeCount + " compagnions " + this.tries + " times but failed, aborting...");
 	/* space for custom functions on failure */
 	return false;
 };
 
 /* optional callback function, will be fired when defined */
 ovk.lc.done = function() {
-	console.log("all compagnions found and loaded, put your script or reference here.");
+    window.console && console.log("all compagnions found and loaded, put your script or reference here.");
 	/* space for custom functions on success like ad.init() */
 	return false;
 };
