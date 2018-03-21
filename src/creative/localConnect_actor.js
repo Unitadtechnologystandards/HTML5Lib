@@ -11,7 +11,7 @@ ovk.lc = {
         /* check if there are frames in this document */
         var scanWindowFrames = target.frames || '';
         if (scanWindowFrames.length === 0) return;
-        for (i=0; i < scanWindowFrames.length; i++) {
+        for (var i=0; i < scanWindowFrames.length; i++) {
             /* then let's try to access them */
             var aktFrame = scanWindowFrames[i].window;
             try {
