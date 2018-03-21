@@ -32,6 +32,9 @@ ovk.lc = {
                 this.findOthers(aktFrame);
             }
         }
+    },
+    init: function() {
+        this.findOthers(window.top);
         /* let's see if we're finished and found every companion */
         if (this.companionsLength < this.creativeCount && this.tries < this.maxRepeat) {
             /* no, so let's repeat this in 200 ms */
@@ -44,9 +47,6 @@ ovk.lc = {
             /* yes, we're fine, so let's call done() to inform the ad */
             this.done && this.done();
         }
-    },
-    init: function() {
-        this.findOthers(window.top);
     }
 };
 
