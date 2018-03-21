@@ -39,7 +39,7 @@ ovk.lc = {
         if (this.companionsLength < this.creativeCount && this.tries < this.maxRepeat) {
             /* no, so let's repeat this in 200 ms */
             this.tries++;
-            setTimeout('ovk.lc.findOthers(window.top)', 200);
+            setTimeout('ovk.lc.init()', 200);
         } else if (this.maxRepeat === this.tries) {
             /* no, but now it's enough we don't expect the companions to be loaded anymore, let's call failed() to inform the ad */
             this.failed && this.failed();
