@@ -1,3 +1,12 @@
+## Example code for a local connection
+#### !! also see localConnect_companion.md !!  
+ 
+
+To have ads know each other and trigger methods or functions inside you first have to find them in DOM.
+Therefore you do not need access to the mainframe the ads can do this on their own when hostet on the same domain.
+
+First we will have to have a method to find the other ads to the ad that will take the lead of the connection
+```
 /* init ovk object for separate namespace this is the same for each index.html */
 var ovk = window.ovk || {};
 ovk.lc = {
@@ -49,14 +58,29 @@ ovk.lc = {
         }
     }
 };
-
+```
+Inside the ovk.lc object you wil have this properties:
+```
+| Property | definition |
+| --- | --- |
+| setIdent | gives the set a name to avoid colliding with other LCs on page |
+| creativeCount | has to bet set to the number of ads being connected |
+| maxRepeat | adjustable - to repeat searching but give up after x times |
+| tries | internal counter for maxRepeat |
+| companions | here you will find the connected ads and can access them like `ovk.lc['lcDemo_layer']` |
+| companionsLength | internal counter - don't change |
+| findOthers | method to search the dom |
+| init | starts the search - can be invoked multiple times if neccassary but has to be invoked once |
+```
+After adding the ovk.lc object you now should add callbacks that will be processed after the search has finished.
+For this example we added these two callbacks:
+``` 
+ovk.lc.done
+ovk.lc.failed
+``` 
+You can register them like this but make sure you change the functions to something the ad should do:
+``` 
 /* these can be or has to be changed for each index.html */
-/* optional callback function, will be fired when defined */
-ovk.lc.failed = function() {
-    window.console && console.log("tried to find all " + this.creativeCount + " companions " + this.tries + " times but failed, aborting...");
-    /* space for custom functions on failure */
-    return false;
-};
 
 /* optional callback function, will be fired when defined */
 ovk.lc.done = function() {
@@ -71,8 +95,22 @@ ovk.lc.done = function() {
     return false;
 };
 
+/* optional callback function, will be fired when defined */
+ovk.lc.failed = function() {
+    window.console && console.log("tried to find all " + this.creativeCount + " companions " + this.tries + " times but failed, aborting...");
+    /* space for custom functions on failure */
+    return false;
+};
+``` 
+Now we'll give this ad a name for inside of the connection - we can access it after search by this name, e.g. `ovk.lc['lcDemo_layer']`
+``` 
 /* !!Mandatory!! set ID to something you can recognize later on to find the ad when you need it */
 ovk.companionId = ovk.lc.setIdent + "_layer";
-
+``` 
+Last but not least we start the search by init()
+``` 
 ovk.lc.init();
 /* end local-connect integration */
+``` 
+
+You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/src/creative/exampleAds/lc_actor.zip)
