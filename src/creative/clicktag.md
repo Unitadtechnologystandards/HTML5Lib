@@ -25,7 +25,7 @@ getUriParams.target
 
 one way of using the clicktag is to set the URI from SRC as href and also the target of an a-tag
 ```
-document.getElementById('clicktag').setAttribute('href', getUriParams.clicktag)
+document.getElementById('clicktag').setAttribute('href', getUriParams.clicktag);
 document.getElementById('clicktag').setAttribute('target', getUriParams.target);
 ```
 
@@ -37,7 +37,8 @@ function openLandingPage() {
 ```
 to use more than one click tag you have to go on like this:
 ```
-document.getElementById('clicktag2').setAttribute('href', getUriParams.clicktag2).setAttribute('target', getUriParams.target2);
+document.getElementById('clicktag2').setAttribute('href', getUriParams.clicktag2);
+document.getElementById('clicktag2').setAttribute('target', getUriParams.target2);
 ```
 or you also can do something like this
 ```
