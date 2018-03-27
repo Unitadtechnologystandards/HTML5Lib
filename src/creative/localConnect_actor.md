@@ -60,7 +60,7 @@ ovk.lc = {
 };
 ```
 Inside the ovk.lc object you wil have this properties:
-```
+
 | Property | definition |
 | --- | --- |
 | setIdent | gives the set a name to avoid colliding with other LCs on page |
@@ -71,7 +71,7 @@ Inside the ovk.lc object you wil have this properties:
 | companionsLength | internal counter - don't change |
 | findOthers | method to search the dom |
 | init | starts the search - can be invoked multiple times if neccassary but has to be invoked once |
-```
+
 After adding the ovk.lc object you now should add callbacks that will be processed after the search has finished.
 For this example we added these two callbacks:
 ``` 
