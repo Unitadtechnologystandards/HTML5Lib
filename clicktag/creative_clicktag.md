@@ -1,4 +1,4 @@
-## Example code for integrate clicktracking
+## Beispielcode zur Integration clicktracking
 
 ### Method to get clickURL and other params from iFrame src
 ```
@@ -17,7 +17,7 @@ var getUriParams = (function() {
 })();
 ```
 
-Now you're able to get every param from URL e.g.
+Nun können alle Parameter der URL ausgelesen werden, zum Beispiel:
 ```
 getUriParams.clicktag
 getUriParams.target
