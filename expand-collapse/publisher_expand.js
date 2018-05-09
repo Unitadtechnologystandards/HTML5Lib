@@ -9,7 +9,7 @@ ovk.listenMessage = function(msg){
         if (!ovk.windowSearch[call[1]]) {
             ovk.walkFrames(call[1], window.top, msg);
         }
-        ovk[call[0]](call);
+        ovk[call[0]](msg);
     }
 };
 
@@ -29,25 +29,26 @@ ovk.walkFrames = function(adName, w, event) {
     }
 };
 
-ovk.expandAd = function(call) {
+ovk.expandAd = function(msg) {
     // here the publisher/marketer has to set their own methods to expand e.g.:
+    var call = msg.data.split(':;:');
     this.windowSearch[call[1]].style.width = call[2] + "px";
     this.windowSearch[call[1]].style.height = call[3] + "px";
 
     // but you can also redirect to your own method as this:
-    myExpandMethod(call);
+    myExpandMethod(msg);
 
     // TODO: do we need to => if !window.top call postMessage to next parent :)
 };
 
 ovk.collapseAd = function(a, w, h, ori, cut) {
     // here the publisher/marketer has to set their own methods to collapse
-
+    var call = msg.data.split(':;:');
     this.windowSearch[call[1]].style.width = call[2] + "px";
     this.windowSearch[call[1]].style.height = call[3] + "px";
 
     // but you can also redirect to your own method as this:
-    myCollapseMethod(call);
+    myCollapseMethod(msg);
     // TODO: do we need to => if !window.top call postMessage to next parent :)
 };
 
