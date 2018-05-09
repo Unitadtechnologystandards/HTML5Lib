@@ -1,6 +1,7 @@
-##Support collapse/expand for OVK HTML5 Ads
+## Support collapse/expand for OVK HTML5 Ads
 
-Um Creatives zu unterstützen die Expand/Collapse nach OVK nutzen nuss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
+Um Creatives zu unterstützen die Expand/Collapse nach OVK Richtlinie nutzen,
+muss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
 Bitte folgende Codezeilen kopieren:
 
 ```
