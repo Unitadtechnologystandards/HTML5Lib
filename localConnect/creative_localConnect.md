@@ -48,6 +48,11 @@ Connector.prototype.init = function () {
 	this.connectionStart.initEvent('frameconnectorstart', true, true);
 	this.walkFrames();
 };
+
+'use strict';
+window.addEventListener('frameconnectorstart', function () {
+    window.localConnectStart && localConnectStart();
+});
 ```
 
 Jetzt konfiguriert man die LocalConnection auf die Kampagne.
@@ -71,3 +76,11 @@ Bitte wie folgt anpassen:
 | connectionName | muss für das Set an ADS identisch sein |
 | windowName | name innerhalb des LocalConnects |
 | windowCount | Anzahl der zugehörigen AdElemente |
+
+Das letzte AdElement informiert alle Elemente, dass die LocalConnection vollständig geladen und aufgebaut wurde.
+Dabei wird in jedem AdFrame folgender Aufruf erzeugt, wenn die Methode/Funktion vorhanden ist:
+
+```
+localConnectStart();
+```
+
