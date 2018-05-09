@@ -1,6 +1,6 @@
-## Unterstützung von collapse/expand für OVK HTML5 Ads`
+## Unterstützung von closeAd für OVK HTML5 Ads
 
-Um Creatives zu unterstützen die Expand/Collapse nach OVK Richtlinie nutzen,
+Um Creatives zu unterstützen die einen Closeaufruf nach OVK Richtlinie nutzen,
 muss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
 Bitte folgende Codezeilen kopieren:
 
@@ -37,31 +37,14 @@ ovk.walkFrames = function(adName, w, event) {
     }
 };
 
-ovk.expandAd = function(msg) {
-};
-
-ovk.collapseAd = function(msg) {
-};
-
-(window.attachEvent) ? window.attachEvent('onmessage', ovk.listenMessage) : window.addEventListener('message', ovk.listenMessage, false);
-```
-
-## Aufgrund der verschiedenen AdServer, CMS und TagManger Systemen ist eine Anpassung der Methoden expandAd und collapseAd erforderlich.
-###Beispiele:
-
-#### rudimentäres expandieren eines adframes
-```
-ovk.expandAd = function(msg) {
+ovk.closeAd = function(msg) {
+    /* if you need to, use the iframe id to search for your container, otherwise use the following script to get rid of the iframe itself. */
     var call = msg.data.split(':;:');
-    this.windowSearch[call[1]].style.width = call[2] + "px";
-    this.windowSearch[call[1]].style.height = call[3] + "px";
-    myExpandMethod(msg);
+    this.windowSearch[call[1]].style.width = '0px';
+    this.windowSearch[call[1]].style.height = '0px';
+    this.windowSearch[call[1]].style.display = 'none';
+    this.windowSearch[call[1]].style.visibility = 'hidden';
+    this.windowSearch[call[1]].src = '';
 };
-```
-
-#### Weiterleitung des Expandbefehls an eine eigene Methode
-```
-ovk.expandAd = function(msg) {
-    myExpandMethod(msg);
-};
+(window.attachEvent) ? window.attachEvent('onmessage', ovk.listenMessage) : window.addEventListener('message', ovk.listenMessage, false);
 ```
