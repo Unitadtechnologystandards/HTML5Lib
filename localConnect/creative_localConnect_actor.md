@@ -113,4 +113,4 @@ ovk.lc.init();
 /* end local-connect integration */
 ``` 
 
-You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/src/creative/exampleAds/lc_actor.zip)
+You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/localConnect/exampleAds/lc_actor.zip)

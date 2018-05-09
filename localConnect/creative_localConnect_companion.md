@@ -15,4 +15,4 @@ ovk.companionId = ovk.lc.setIdent + '_banner';
 ```
 Please make sure `setIdent` is set to the same value as the actor is set to and beware that `ovk.companionId` has to be unique.
 
-You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/src/creative/exampleAds/lc_companion.zip)
+You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/localConnect/exampleAds/lc_companion.zip)

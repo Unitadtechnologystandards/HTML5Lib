@@ -49,4 +49,4 @@ showAd = function() {
 };
 ```
 
-You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/src/creative/exampleAds/close.zip)
+You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/close/exampleAds/close.zip)

@@ -48,4 +48,4 @@ function openLandingPageByParams(uri, target) {
 	window.open(uri, target);
 }
 ```
-You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/src/creative/exampleAds/clicktag.zip)
+You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/clicktag/exampleAds/clicktag.zip)
