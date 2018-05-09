@@ -2,10 +2,9 @@
 
 Um Creatives zu unterstützen die einen Closeaufruf nach OVK Richtlinie nutzen,
 muss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
-Bitte folgende Codezeilen kopieren:
+Bitte folgende Codezeilen kopieren und vor dem AD/Redirect laden/einfügen:
 
 ```
-/* to be placed before rendering the ad */
 window.top.ovk = window.top.ovk || {
     windowSearch: {}
 };
@@ -22,14 +21,16 @@ ovk.listenMessage = function(msg){
 };
 
 ovk.walkFrames = function(adName, w, event) {
-    /* check the document for the given adframe */
+    /* hiermit werden frames die wir noch nicht kennen gesucht und registriert */
     var i,
         frameAccessElem,
         currentFrame;
     for (i = 0; i < w.frames.length; i++) {
         currentFrame = w.frames[i];
         if (event.source.window === currentFrame) {
-            this.windowSearch[adName] = w.document.getElementsByTagName("iframe")[i];
+            try {
+                this.windowSearch[adName] = w.document.getElementsByTagName("iframe")[i];
+            }catch(e) {}
         }
         if (currentFrame.frames.length > 0) {
             this.walkFrames(currentFrame);
