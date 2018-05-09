@@ -94,7 +94,7 @@ Sie können nun angesprochen werden über:
 myLocalConnect.windows.firstElement
 ```
 
-bzw.
+bzw. auch über den Namen direkt
 
 ```
 firstElement
