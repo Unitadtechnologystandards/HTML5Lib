@@ -49,7 +49,6 @@ Connector.prototype.init = function () {
 	this.walkFrames();
 };
 
-'use strict';
 window.addEventListener('frameconnectorstart', function () {
     window.localConnectStart && localConnectStart();
 });
