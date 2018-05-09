@@ -1,34 +1,54 @@
-var ovk = window.ovk || {};
+window.top.ovk = window.top.ovk || {
+    windowSearch: {}
+};
+var ovk = window.top.ovk;
+
 ovk.listenMessage = function(msg){
     if (msg.data && msg.data.match(':;:')) {
         var call = msg.data.split(':;:');
-        ovk[call[0]](msg);
+        if (!ovk.windowSearch[call[1]]) {
+            ovk.walkFrames(call[1], window.top, msg);
+        }
+        ovk[call[0]](call);
     }
 };
 
-ovk.expandAd = function(a) {
-    // how to handle?
-    // shall we use clip: rect() - maybe the best option
-    // shall we resize and reposition the iframe
-    // shall we get the new dimensions and expand direction by call or set it initially on page
-    // or work with two different creatives and hide/show them (critical for counting)
+ovk.walkFrames = function(adName, w, event) {
+    /* check the document for the given adframe */
+    var i,
+        frameAccessElem,
+        currentFrame;
+    for (i = 0; i < w.frames.length; i++) {
+        currentFrame = w.frames[i];
+        if (event.source.window === currentFrame) {
+            this.windowSearch[adName] = w.document.getElementsByTagName("iframe")[i];
+        }
+        if (currentFrame.frames.length > 0) {
+            this.walkFrames(currentFrame);
+        }
+    }
+};
 
-    // clip example
-    var call = msg.data.split(':;:');
-    document.getElementById(call[1]).style.clip = "rect(0px " + call[2] + "px " + call[2] + "px 0px)";
+ovk.expandAd = function(call) {
+    // here the publisher/marketer has to set their own methods to expand e.g.:
+    this.windowSearch[call[1]].style.width = call[2] + "px";
+    this.windowSearch[call[1]].style.height = call[3] + "px";
+
+    // but you can also redirect to your own method as this:
+    myExpandMethod(call);
+
+    // TODO: do we need to => if !window.top call postMessage to next parent :)
 };
 
 ovk.collapseAd = function(a, w, h, ori, cut) {
-    var call = msg.data.split(':;:');
-    var cut = call[4];
-    var a1 = "0", b1 = call[2], c1 = call[2], d1 = "0";
-    switch (call[3]) {
-        case "down": c1 = h - cut; break;
-        case "left": d1 = cut; break;
-        case "right": b1 = w - cut;	break;
-        case "top":	a1 = cut; break;
-    }
-    document.getElementById(call[1]).style.clip = 'rect(" + a1 + "px " + b1 + "px " + c1 + "px " + d1 + "px)'
+    // here the publisher/marketer has to set their own methods to collapse
+
+    this.windowSearch[call[1]].style.width = call[2] + "px";
+    this.windowSearch[call[1]].style.height = call[3] + "px";
+
+    // but you can also redirect to your own method as this:
+    myCollapseMethod(call);
+    // TODO: do we need to => if !window.top call postMessage to next parent :)
 };
 
 (window.attachEvent) ? window.attachEvent('onmessage', ovk.listenMessage) : window.addEventListener('message', ovk.listenMessage, false);
