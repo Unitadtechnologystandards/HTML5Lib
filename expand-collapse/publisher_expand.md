@@ -45,7 +45,8 @@ ovk.collapseAd = function(msg) {
 (window.attachEvent) ? window.attachEvent('onmessage', ovk.listenMessage) : window.addEventListener('message', ovk.listenMessage, false);
 ```
 
-## Beispiele:
+## Aufgrund der verschiedenen AdServer, CMS und TagManger Systemen ist eine Anpassung der Methoden expandAd und collapseAd erforderlich.
+###Beispiele:
 
 #### rudimentäres expandieren eines adframes
 ```
