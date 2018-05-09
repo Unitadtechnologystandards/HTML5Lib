@@ -83,3 +83,20 @@ Dabei wird in jedem AdFrame folgender Aufruf erzeugt, wenn die Methode/Funktion 
 localConnectStart();
 ```
 
+Die einzelnen AdElmente stehen nun allen Frames zur Verfügung. Hierbei werden Informationen aus der Konfiguration genutzt und in folgendem Schema erfasst:
+```
+%%connectionName%%.windows.%%windowName%%
+```
+ 
+Sie können nun angesprochen werden über:
+
+```
+myLocalConnect.windows.firstElement
+```
+
+bzw.
+
+```
+firstElement
+```
+
