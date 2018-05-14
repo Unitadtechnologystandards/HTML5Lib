@@ -3,18 +3,16 @@
 ### Method to get clickURL and other params from iFrame src
 ```
 /* init method to get URI params, where 'clicktag', 'target' and 'frameId' will be passed */
-var getUriParams = (function() {
-	var query_string = {};
-	var query = window.location.search.substring(1);
-	var parmsArray = query.split('&');
-	if(parmsArray.length <= 0) return query_string;
-	for(var i = 0; i < parmsArray.length; i++) {
-		var pair = parmsArray[i].split('=');
-		var val = decodeURIComponent(pair[1]);
-		if (val !== '' && pair[0] !== '') query_string[pair[0]] = val;
+var getUriParams = function () {
+	var p, params = {};
+	if (location.search) {
+		location.search.substr(1).split('&').forEach(function (e) {
+			p = e.split('=');
+			params[p[0]] = decodeURIComponent(p[1]);
+		});
 	}
-	return query_string;
-})();
+	return params;
+}();
 ```
 
 Nun können alle Parameter der URL ausgelesen werden, zum Beispiel:
