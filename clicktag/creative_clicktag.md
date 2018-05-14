@@ -2,7 +2,7 @@
 
 ### Folgende Mehtode kann so wie sie ist benutzt werden um Parameter eines iFrames auszulesen
 ```
-/* init method to get URI params, where 'clicktag', 'target' and 'frameId' will be passed */
+/* initiale Methode um URL Parameter auszulesen, unter Anderem 'clicktag' und 'target' */
 var getUriParams = function () {
 	var p, params = {};
 	if (location.search) {

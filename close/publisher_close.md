@@ -6,14 +6,14 @@ Bitte folgende Codezeilen kopieren und vor dem AD/Redirect laden/einfügen:
 
 ```
 window.top.ovk = window.top.ovk || {
-    windowSearch: {}
+    ads2Handle: {}
 };
 var ovk = window.top.ovk;
 
 ovk.listenMessage = function(msg){
     if (msg.data && msg.data.match(':;:')) {
         var call = msg.data.split(':;:');
-        if (!ovk.windowSearch[call[1]]) {
+        if (!ovk.ads2Handle[call[1]]) {
             ovk.walkFrames(call[1], window.top, msg);
         }
         ovk[call[0]](msg);
@@ -29,7 +29,7 @@ ovk.walkFrames = function(adName, w, event) {
         currentFrame = w.frames[i];
         if (event.source.window === currentFrame) {
             try {
-                this.windowSearch[adName] = w.document.getElementsByTagName("iframe")[i];
+                this.ads2Handle[adName] = w.document.getElementsByTagName("iframe")[i];
             }catch(e) {}
         }
         if (currentFrame.frames.length > 0) {
@@ -41,11 +41,11 @@ ovk.walkFrames = function(adName, w, event) {
 ovk.closeAd = function(msg) {
     /* if you need to, use the iframe id to search for your container, otherwise use the following script to get rid of the iframe itself. */
     var call = msg.data.split(':;:');
-    this.windowSearch[call[1]].style.width = '0px';
-    this.windowSearch[call[1]].style.height = '0px';
-    this.windowSearch[call[1]].style.display = 'none';
-    this.windowSearch[call[1]].style.visibility = 'hidden';
-    this.windowSearch[call[1]].src = '';
+    this.ads2Handle[call[1]].style.width = '0px';
+    this.ads2Handle[call[1]].style.height = '0px';
+    this.ads2Handle[call[1]].style.display = 'none';
+    this.ads2Handle[call[1]].style.visibility = 'hidden';
+    this.ads2Handle[call[1]].src = '';
 };
 (window.attachEvent) ? window.attachEvent('onmessage', ovk.listenMessage) : window.addEventListener('message', ovk.listenMessage, false);
 ```

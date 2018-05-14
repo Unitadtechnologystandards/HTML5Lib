@@ -6,14 +6,14 @@ Bitte folgende Codezeilen kopieren und vor dem AD/Redirect laden/einfügen:
 
 ```
 window.top.ovk = window.top.ovk || {
-    windowSearch: {}
+    ads2Handle: {}
 };
 var ovk = window.top.ovk;
 
 ovk.listenMessage = function(msg){
     if (msg.data && msg.data.match(':;:')) {
         var call = msg.data.split(':;:');
-        if (!ovk.windowSearch[call[1]]) {
+        if (!ovk.ads2Handle[call[1]]) {
             ovk.walkFrames(call[1], window.top, msg);
         }
         ovk[call[0]](msg);
@@ -29,7 +29,7 @@ ovk.walkFrames = function(adName, w, event) {
         currentFrame = w.frames[i];
         if (event.source.window === currentFrame) {
             try {
-                this.windowSearch[adName] = w.document.getElementsByTagName("iframe")[i];
+                this.ads2Handle[adName] = w.document.getElementsByTagName("iframe")[i];
             }catch(e) {}
         }
         if (currentFrame.frames.length > 0) {
@@ -54,12 +54,12 @@ ovk.collapseAd = function(msg) {
 ```
 ovk.expandAd = function(msg) {
     var call = msg.data.split(':;:');
-    this.windowSearch[call[1]].style.width = call[2] + "px";
-    this.windowSearch[call[1]].style.height = call[3] + "px";
-    if (this.windowSearch[call[1]].contentWindow.parent !== window.top) {
+    this.ads2Handle[call[1]].style.width = call[2] + "px";
+    this.ads2Handle[call[1]].style.height = call[3] + "px";
+    if (this.ads2Handle[call[1]].contentWindow.parent !== window.top) {
         try {
-            this.windowSearch[call[1]].contentWindow.frameElement.style.width = call[2] + "px";
-            this.windowSearch[call[1]].contentWindow.frameElement.style.height = call[3] + "px";
+            this.ads2Handle[call[1]].contentWindow.frameElement.style.width = call[2] + "px";
+            this.ads2Handle[call[1]].contentWindow.frameElement.style.height = call[3] + "px";
         }catch(e) {}
     }
 };

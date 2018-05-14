@@ -1,52 +1,34 @@
-## Example code to ask the mainFrame to close the iframe
+## Beispielcode für einen CloseAd Aufruf
 
-the mainframe has to include the [ovkLib](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/ovkvmf.js)
-but at least the part for expand taken out of [here](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/close.js)
-This can only work when the iframe is a child of the mainframe. Otherwise the mainFrame may not have access to the frame the adframe is inside.
+Die Trägerseite die den Befehl ausführen soll mussen entweder die [ovkLib](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/ovkvmf.js)
+oder zumindest das Snippet des dort extrahierten Befehls [hier](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/close.js)
+integrieren. Das Snippet kann auch über das AD mit ausgespielt werden.
 
-Method to get clickURL and other params from iFrame src to get own identifier
+#### Jedes AD benötigt einen inzigartigen Bezeichner, eine UniqueId, als Namen, um die Befehle entsprechend zuordnen zu können:
 ```
-/* init method to get URI params, where 'frameId' will be passed, should already be included from clicktag.js */
-var getUriParams = function() {
-	var query_string = {};
-	var query = window.location.search.substring(1);
-	var parmsArray = query.split('&');
-	if(parmsArray.length <= 0) return query_string;
-	for(var i = 0; i < parmsArray.length; i++) {
-		var pair = parmsArray[i].split('=');
-		var val = decodeURIComponent(pair[1]);
-		if (val !== '' && pair[0] !== '') query_string[pair[0]] = val;
-	}
-	return query_string;
-}();
+var adname = "myAD"; // bitte den Namen passend zum AD selbst setzen
 ```
-Remove Ad from DOM
-
-
-please change function name 'closeAd' to whatever your close-method get called by the creative or 
-  let the ad call this function 'as is' when closing the ad
+#### Ad vom DOM entfernen
 ```
-/* the ad get's removed from the dom */
+/* das AD wird vollständig aus dem DOM entfernt */
 closeAd = function() {
-    window.top.postMessage('closeAd:;:' + getUriParams.frameId ,'*');
+    window.top.postMessage('closeAd:;:' + adname ,'*');
 };
 ```
-To hide the ad (again)
+#### Das AD (wieder) verstecken (nicht entfernen nur ausblenden):
 
-please change function name 'hideAd' to whatever your close-method get called by the creative or 
-  let the ad call this function 'as is' when closing the ad
 ```
-/* the ad is hidden by display: none */
+/* das ad wird mit display: none ausgeblendet */
 hideAd = function() {
-    window.top.postMessage('hideAd:;:' + getUriParams.frameId ,'*');
+    window.top.postMessage('hideAd:;:' + adname ,'*');
 };
 ```
-To show the ad (again)
+#### Das AD (wieder) einblenden:
 ```
-/* the ad will be hidden by display: none */
+/* das AD wird wieder eingeblendet indem display: none (wieder) entfernt wird. */
 showAd = function() {
-    window.top.postMessage('showAd:;:' + getUriParams.frameId ,'*');
+    window.top.postMessage('showAd:;:' + adname ,'*');
 };
 ```
 
-You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/close/exampleAds/close.zip)
+##### Ein Beispiel findet sich [hier](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/close/exampleAds/close.zip)
