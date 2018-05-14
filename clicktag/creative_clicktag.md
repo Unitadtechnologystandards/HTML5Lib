@@ -1,6 +1,6 @@
 ## Beispielcode zur Integration clicktracking
 
-### Method to get clickURL and other params from iFrame src
+### Folgende Mehtode kann so wie sie ist benutzt werden um Parameter eines iFrames auszulesen
 ```
 /* init method to get URI params, where 'clicktag', 'target' and 'frameId' will be passed */
 var getUriParams = function () {
@@ -20,25 +20,23 @@ Nun können alle Parameter der URL ausgelesen werden, zum Beispiel:
 getUriParams.clicktag
 getUriParams.target
 ```
-
-one way of using the clicktag is to set the URI from SRC as href and also the target of an a-tag
+Eine Art "clicktag" zu nutzen wäre die URL als href Attribut eine a-Tags zu nutzen:
 ```
 document.getElementById('clicktag').setAttribute('href', getUriParams.clicktag);
 document.getElementById('clicktag').setAttribute('target', getUriParams.target);
 ```
-
-another way of using the clicktag by using the URI as well as the link-target as window.open param
+Ein anderer Weg ist die Nutzung unter Verwendung von window.open:
 ```
 function openLandingPage() {
 	window.open(getUriParams.clicktag, getUriParams.target);
 }
 ```
-to use more than one click tag you have to go on like this:
+Wenn mehr als ein Cliktag genutzt werden soll:
 ```
 document.getElementById('clicktag2').setAttribute('href', getUriParams.clicktag2);
 document.getElementById('clicktag2').setAttribute('target', getUriParams.target2);
 ```
-or you also can do something like this
+Es kann natürlich auch jeder andere eigene Ansatz genutzt werden:
 ```
 function openLandingPageByParams(uri, target) {
     uri = uri || getUriParams.clicktag;
@@ -46,4 +44,4 @@ function openLandingPageByParams(uri, target) {
 	window.open(uri, target);
 }
 ```
-You will find an example [here](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/clicktag/exampleAds/clicktag.zip)
+Ein Beispiel findet sich [hier](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/clicktag/exampleAds/clicktag.zip)
