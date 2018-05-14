@@ -1,4 +1,4 @@
-## Example code for a local connection
+## Beispielcode für eine LocalConnection
 
 Folgendes Script muss zunächst in jedem AdElement integriert werden:
  
