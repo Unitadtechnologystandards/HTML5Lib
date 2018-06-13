@@ -29,10 +29,6 @@ These action will need to have a postMessage support:
 * Hide/Show/Close
 ```
 
-### full library
-
-The repository also offers the former library state April 2015.
-However, the snippets are written to work either the full lib is already integrated or not
 
 ### Support or Contact
 
