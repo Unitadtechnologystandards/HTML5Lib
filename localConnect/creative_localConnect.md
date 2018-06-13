@@ -1,6 +1,6 @@
-## Beispielcode für eine LocalConnection
+## Beispielcode für eine LocalConnect
 
-Folgendes Script muss zunächst in jedem AdElement integriert werden:
+Folgendes Script muss zunächst in jedem Werbeelement integriert werden:
  
 ```
 'use strict';
@@ -54,7 +54,7 @@ window.addEventListener('frameconnectorstart', function () {
 });
 ```
 
-Jetzt konfiguriert man die LocalConnection auf die Kampagne.
+Jetzt konfiguriert man das LocalConnect auf die Kampagne.
 Hierzu bitte dieses Script einfügen und anpassen:
 
 ```
@@ -74,16 +74,16 @@ Bitte wie folgt anpassen:
 | --- | --- |
 | connectionName | muss für das Set an ADS identisch sein |
 | windowName | name innerhalb des LocalConnects |
-| windowCount | Anzahl der zugehörigen AdElemente |
+| windowCount | Anzahl der zugehörigen Werbeelemente |
 
-Das letzte AdElement informiert alle Elemente, dass die LocalConnection vollständig geladen und aufgebaut wurde.
+Das letzte Werbeelement informiert alle Elemente, dass das LocalConnect vollständig geladen und aufgebaut wurde.
 Dabei wird in jedem AdFrame folgender Aufruf erzeugt, wenn die Methode/Funktion vorhanden ist:
 
 ```
 localConnectStart();
 ```
 
-Die einzelnen AdElmente stehen nun allen Frames zur Verfügung. Hierbei werden Informationen aus der Konfiguration genutzt und in folgendem Schema erfasst:
+Die einzelnen Werbeelemente stehen nun allen Frames zur Verfügung. Hierbei werden Informationen aus der Konfiguration genutzt und in folgendem Schema erfasst:
 ```
 %%connectionName%%.windows.%%windowName%%
 ```
