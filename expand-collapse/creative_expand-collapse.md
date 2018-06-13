@@ -1,12 +1,10 @@
-## Example code to ask the mainFrame to expand/collapse the iframe
+## Beispielcode zur Integration Expand/Collapse
 
-Die Trägerseite die den Befehl ausführen soll mussen entweder die [ovkLib](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/ovkvmf.js)
-oder zumindest das Snippet des dort extrahierten Befehls [hier](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/expand.js)
-integrieren. Das Snippet kann auch über das AD mit ausgespielt werden.
+Die Trägerseite die den Befehl ausführen soll muss das Snippet integrieren. Das Snippet kann auch über das Creative mit ausgespielt werden.
 
-#### Jedes AD benötigt einen einzigartigen Bezeichner, eine UniqueId, als Namen, um die Befehle entsprechend zuordnen zu können:
+#### Jedes Ad benötigt einen einzigartigen Bezeichner, eine UniqueId, als Namen, um die Befehle entsprechend zuordnen zu können:
 ```
-var adname = "myAD"; // bitte den Namen passend zum AD selbst setzen
+var adname = "myAD"; // bitte den Namen passend zum Ad selbst setzen
 ```
 
 Nun kann die Trägerseite informiert werden, dass das Creative die Größe verändert, als Beispiel kann das verwendet werden:
@@ -20,5 +18,3 @@ collapseAd = function() {
     window.top.postMessage('contractAd:;:' + adname + ':;:' + expandedWidth + ':;:'  + expandedHeight + ':;:' + expandedDirection + ':;:'  + clipValue,'*');
 };
 ```
-
-Ein Beispiel findet sich [hier](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/expand-collapse/exampleAds/expand.zip)
