@@ -15,7 +15,7 @@ closeAd = function() {
     window.top.postMessage('closeAd:;:' + adname ,'*');
 };
 ```
-#### Das Ad (wieder) verstecken (nicht entfernen nur ausblenden):
+#### Das Ad (wieder) verstecken (nicht entfernen, nur ausblenden):
 
 ```
 /* das Ad wird mit display: none ausgeblendet */
