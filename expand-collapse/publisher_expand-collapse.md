@@ -1,8 +1,8 @@
-## Unterstützung von collapse/expand für OVK HTML5 Ads`
+## Beispielcode für collapse/expand für OVK HTML5 Ads`
 
 Um Creatives zu unterstützen die Expand/Collapse nach OVK Richtlinie nutzen,
 muss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
-Bitte folgende Codezeilen kopieren und vor dem AD/Redirect laden/einfügen:
+Bitte folgende Codezeilen kopieren und vor dem Ad/Redirect laden/einfügen:
 
 ```
 window.top.ovk = window.top.ovk || {
