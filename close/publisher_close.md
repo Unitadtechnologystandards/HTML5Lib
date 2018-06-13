@@ -1,4 +1,4 @@
-## Beispielcode zur Integration clicktracking
+## Beispielcode für einen CloseAd Aufruf
 
 Um Creatives zu unterstützen die einen CloseAd Befehl nach OVK Richtlinie nutzen,
 muss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
