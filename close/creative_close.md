@@ -10,7 +10,7 @@ var adname = "myAD"; // bitte den Namen passend zum AD selbst setzen
 ```
 #### Ad vom DOM entfernen
 ```
-/* das AD wird vollständig aus dem DOM entfernt */
+/* das Ad wird vollständig aus dem DOM entfernt */
 closeAd = function() {
     window.top.postMessage('closeAd:;:' + adname ,'*');
 };
@@ -18,14 +18,14 @@ closeAd = function() {
 #### Das Ad (wieder) verstecken (nicht entfernen nur ausblenden):
 
 ```
-/* das ad wird mit display: none ausgeblendet */
+/* das Ad wird mit display: none ausgeblendet */
 hideAd = function() {
     window.top.postMessage('hideAd:;:' + adname ,'*');
 };
 ```
 #### Das Ad (wieder) einblenden:
 ```
-/* das AD wird wieder eingeblendet indem display: none (wieder) entfernt wird. */
+/* das Ad wird wieder eingeblendet indem display: none (wieder) entfernt wird. */
 showAd = function() {
     window.top.postMessage('showAd:;:' + adname ,'*');
 };
