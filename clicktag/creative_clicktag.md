@@ -20,7 +20,7 @@ Nun können alle Parameter der URL ausgelesen werden, zum Beispiel:
 getUriParams.clicktag
 getUriParams.target
 ```
-Eine Art "clicktag" zu nutzen wäre die URL als href Attribut eine a-Tags zu nutzen:
+Eine Art "clicktag" zu nutzen wäre die URL als href Attribut eines a-Tags zu nutzen:
 ```
 document.getElementById('clicktag').setAttribute('href', getUriParams.clicktag);
 document.getElementById('clicktag').setAttribute('target', getUriParams.target);
