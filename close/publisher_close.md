@@ -1,8 +1,8 @@
-## Unterstützung von closeAd für OVK HTML5 Ads
+## Unterstützung von CloseAd für OVK HTML5 Ads
 
-Um Creatives zu unterstützen die einen Closeaufruf nach OVK Richtlinie nutzen,
+Um Creatives zu unterstützen die einen CloseAd Befehl nach OVK Richtlinie nutzen,
 muss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
-Bitte folgende Codezeilen kopieren und vor dem AD/Redirect laden/einfügen:
+Bitte folgende Codezeilen kopieren und vor dem Ad/Redirect laden/einfügen:
 
 ```
 window.top.ovk = window.top.ovk || {
