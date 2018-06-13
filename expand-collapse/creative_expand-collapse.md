@@ -1,6 +1,6 @@
 ## Beispielcode zur Integration Expand/Collapse
 
-Die Trägerseite die den Befehl ausführen soll muss das Snippet integrieren. Das Snippet kann auch über das Creative mit ausgespielt werden.
+Die Trägerseite, welche den Befehl ausführen soll muss das Snippet integrieren. Das Snippet kann auch über das Creative mit ausgespielt werden.
 
 #### Jedes Ad benötigt einen einzigartigen Bezeichner, eine UniqueId, als Namen, um die Befehle entsprechend zuordnen zu können:
 ```
