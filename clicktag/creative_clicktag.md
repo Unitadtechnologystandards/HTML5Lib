@@ -1,6 +1,6 @@
 ## Beispielcode zur Integration clicktracking
 
-### Folgende Mehtode kann so wie sie ist benutzt werden um Parameter eines iFrames auszulesen
+### Folgende Methode kann so wie sie ist benutzt werden um Parameter eines iFrames auszulesen
 ```
 /* initiale Methode um URL Parameter auszulesen, unter Anderem 'clicktag' und 'target' */
 var getUriParams = function () {
@@ -31,7 +31,7 @@ function openLandingPage() {
 	window.open(getUriParams.clicktag, getUriParams.target);
 }
 ```
-Wenn mehr als ein Cliktag genutzt werden soll:
+Wenn mehr als ein Clicktag genutzt werden soll:
 ```
 document.getElementById('clicktag2').setAttribute('href', getUriParams.clicktag2);
 document.getElementById('clicktag2').setAttribute('target', getUriParams.target2);
