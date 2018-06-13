@@ -1,4 +1,4 @@
-## #LOCALCONNECT
+ #LOCALCONNECT
 
 Ein  LocalConnect, also eine Verbindung zwischen zwei oder mehr Werbeelementen, kann ohne das Hinzuziehen der Trägerseite bewerkstelligt werden.
 
