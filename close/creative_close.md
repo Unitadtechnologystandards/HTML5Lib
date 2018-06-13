@@ -29,4 +29,3 @@ showAd = function() {
 };
 ```
 
-##### Ein Beispiel findet sich [hier](https://github.com/Unitadtechnologystandards/HTML5Lib/raw/master/close/exampleAds/close.zip)
