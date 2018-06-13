@@ -1,8 +1,6 @@
 ## Beispielcode für einen CloseAd Aufruf
 
-Die Trägerseite, welche den Befehl ausführen soll muss entweder die [ovkLib](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/ovkvmf.js)
-oder zumindest das Snippet des dort extrahierten Befehls [hier](https://github.com/Unitadtechnologystandards/HTML5Lib/blob/master/src/publisher/close.js)
-integrieren. Das Snippet kann aber auch über das Ad mit ausgespielt werden.
+Die Trägerseite, welche den Befehl ausführen soll muss das Snippet integrieren. Das Snippet kann aber auch über das Ad mit ausgespielt werden.
 
 #### Jedes Ad benötigt einen einzigartigen Bezeichner, eine UniqueId, als Namen, um die Befehle entsprechend zuordnen zu können:
 ```
