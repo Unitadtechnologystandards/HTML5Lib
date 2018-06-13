@@ -1,4 +1,4 @@
-## Unterstützung von CloseAd für OVK HTML5 Ads
+## Beispielcode zur Integration clicktracking
 
 Um Creatives zu unterstützen die einen CloseAd Befehl nach OVK Richtlinie nutzen,
 muss folgendes JS auf der Seite vorhanden sein oder mit dem Ad zusammen ausgespielt werden.
