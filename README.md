@@ -1,37 +1,41 @@
-## HTML5Lib - a collection of scripts to use within HTML5 AdCreation and AdServing  
+## HTML5 Snipptes by OVK - eine Kollektion kurzer Skripte zur Verwendung in Creatives und/oder der AdServing Seite
 
-The main challenge by serving HTML5 Ads is [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
-The former used object tag to serve the flash plugin has been part of the main page, therefore actionScript could easily access all informations
-form the mainpage and invoke functions if they have been there.
+HTML5-Werbemittel haben sich mittlerweile am Markt etabliert. Dennoch bereiten in der Praxis einige Funktionalitäten, abhängig von der umgebenden Webseite, noch immer Probleme.
+Die dabei wohl größte Herausforderung stellt [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) dar.
+Der früher verwendete Object-Tag um Flashbanner auszuliefern war Teil der Haupt-Website. Das in Flash integrierte ActionScript konnte daher problemlos auf alle nöttigen Informationen auf der Page
+zugreifen und Javascript-Funktionen und Methoden aufrufen die dort registriert sind.
 
-HTML5 are HTML documents, the same like each other website on the world, included within an iFrame pointing to a foreign domain.
-CORS concludes to never let a frame access another frame of a different origin.
-That means that a script within an HTML5 AD is not allowed to resize it's own iFrame or manipulate any other element on the main page by his owm like flash could via actionScript
+Ein HTML5 AD ist ein HTML Dokument, genau wie die Website selbst, über einen iFrame in Letzterem integriert.
+Ein iFrame ist also ein Dokument in einem Dokument. CORS erlaubt nun den Zugriff von einem Dokument ins Andere nur,
+wenn beide Dokumente demselben Ursprung angehören.
+Folglich ist es einem Javascript innerhalb eines HTML5 AD Dokuments nicht gestattet auf das Dokument der Website zuzugreifen,
+oder Elemente auf dieser zu ändern bzw. zu manipulieren wie Flash es mit ActionScript konnte.
 
-To make this work HTML5 itself offers a communicator called ["postMessage"](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
-This allows us to send information to any frame even if do may not access it directly.
+Das aber bedeutet nicht, dass diese Optionen nun wegfallen, HTML5 selbst bietet eine Lösung,
+eine Möglichkeit Informationen zwischen den Dokumenten auszutauschen genannt ["postMessage"](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+Damit ist es möglich Informationen aus dem Ad an die Website oder andersherum zu senden.
 
-### without postMessage Use Cases
+### Use Cases ohne postMessage
 
-Some features do not need communication with the mainpage while working, these are
+Eine Funktionalitäten können ohen Kommunikation mit der Website umgesetzt werden, darunter folgende:
 
 ```
 * clicktag
 * localConnect
 ```
 
-### postMessage Use Cases
+### Use Cases mit postMessage
 
-These action will need to have a postMessage support:
+Diese Funktionalitäten hingegen erfordern eine Kommunikation und damit Code auf beiden Seiten:
 
 ```
 * Expand/Collapse
 * Hide/Show/Close
 ```
 
-
 ### Support or Contact
 
-This repository is meant to be reviewed and updated by each member of OVK.
+Dieses Repository wird von Mitgliedern des OVK betreut und gepflegt.
 
-If you have questions please submit an [issue](https://github.com/Unitadtechnologystandards/HTML5Lib/issues) or send a mail to [info@bvdw.org](mailto:info@bvdw.org) subject **HTML5Lib**
+Bei Fragen oder Anregungen erstellen sie gerne eine Anfrage als [Github-Issue](https://github.com/Unitadtechnologystandards/HTML5Lib/issues)
+oder senden Sie uns eine Mail an [info@bvdw.org](mailto:info@bvdw.org) mit dem Betreff **HTML5 Snipptes**
