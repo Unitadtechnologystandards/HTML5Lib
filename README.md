@@ -33,7 +33,7 @@ Diese Funktionalitäten hingegen erfordern eine Kommunikation und damit Code auf
 * Hide/Show/Close
 ```
 
-### Support or Contact
+### Support/Kontakt
 
 Dieses Repository wird von Mitgliedern des OVK betreut und gepflegt.
 
