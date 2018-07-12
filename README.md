@@ -13,7 +13,7 @@ oder Elemente auf dieser zu ändern, bzw. zu manipulieren wie Flash es mit Actio
 
 Das aber bedeutet nicht, dass diese Optionen nun wegfallen, HTML5 selbst bietet eine Lösung,
 eine Möglichkeit Informationen zwischen den Dokumenten auszutauschen, genannt ["postMessage"](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
-Damit ist es möglich Informationen aus dem Ad an die Website oder umgekehrt zu senden.
+Damit ist es möglich Informationen aus dem Ad an die Website, oder umgekehrt zu senden.
 
 ### Use Cases ohne postMessage
 
