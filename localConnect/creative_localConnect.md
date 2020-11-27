@@ -28,9 +28,10 @@ Connector.prototype.walkFrames = function (w) {
 	}
 	framesLength = w.frames.length;
 	for (i = 0; i < framesLength; i++) {
+		frameAccessElem = "";
 		currentFrame = w.frames[i];
 		try {
-			frameAccessElem = currentFrame.document;
+			frameAccessElem = currentFrame.document.domain;
 		} catch (e) {}
 		if (frameAccessElem && currentFrame[this.name]) {
 			this.windowSearch[currentFrame[this.name].windowName] = currentFrame;
